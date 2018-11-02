@@ -1,18 +1,21 @@
-module Main exposing (..)
+module Main exposing (main)
 
-import Html
-import State exposing (init, update, subscriptions)
+import Browser
+import State exposing (init, subscriptions, update)
 import View exposing (view)
 
+
 main =
-  Html.program
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    , view = view
-    }
+    Browser.element
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = view
+        }
+
+
 
 {-
--círculos centrados? separación entre ellos?
--flecha
+   -círculos centrados? separación entre ellos?
+   -flecha
 -}

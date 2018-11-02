@@ -1,4 +1,4 @@
-module Types exposing (..)
+module Types exposing (Model, Msg(..))
 
 
 type alias Model =
@@ -11,14 +11,14 @@ type alias Model =
 
 
 type Msg
-  = Introducir String
-  | KeepLong String
-  | Aleatorio
-  | Permutar (List Int)
-  | Rotar Bool
-  | Ultimo Bool
-  | Sch Bool
-  | Invertir
-  | Transportar
-  | Retrogradar
-  | Ciclar
+    = Introducir String
+    | KeepLong String
+    | Aleatorio
+    | Permutar (List Int)
+    | Rotar Bool
+    | Ultimo Bool
+    | Sch Bool
+    | Invertir
+    | Transportar
+    | Retrogradar
+    | Ciclar
