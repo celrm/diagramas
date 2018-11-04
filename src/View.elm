@@ -1,5 +1,6 @@
 module View exposing (view)
 
+import Browser
 import Functions exposing (diagramas)
 import Html exposing (..)
 import Html.Attributes exposing (placeholder, checked, name, style, type_)
@@ -173,9 +174,10 @@ bloquealeatorio =
         ]
 
 
-view : Model -> Html Msg
+view : Model -> Browser.Document Msg
 view model =
-    div  generalStyle 
+  (Browser.Document "Diagramas"
+    [ div  generalStyle
         [ header
         , opciones
         , diagramas model
@@ -186,3 +188,5 @@ view model =
         , bloquealeatorio
         , informacion
         ]
+    ]
+  )
