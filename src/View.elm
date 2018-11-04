@@ -3,7 +3,7 @@ module View exposing (view)
 import Browser
 import Functions exposing (diagramas)
 import Html exposing (..)
-import Html.Attributes exposing (placeholder, checked, name, style, type_)
+import Html.Attributes exposing (placeholder, checked, name, style, type_, href)
 import Html.Events exposing (onCheck, onClick, onInput)
 import Info exposing (informacion)
 import Styles exposing (..)
@@ -173,12 +173,14 @@ bloquealeatorio =
             [ text "OK" ]
         ]
 
-
 view : Model -> Browser.Document Msg
 view model =
   (Browser.Document "Diagramas"
     [ div  generalStyle
-        [ header
+        [ navbar 2
+        , br [] []
+        , br [] []
+        , header
         , opciones
         , diagramas model
         , schoenberg
