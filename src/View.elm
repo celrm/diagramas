@@ -10,39 +10,13 @@ import Styles exposing (..)
 import Types exposing (..)
 
 
-doblecolumna : String -> List (Html Msg) -> List (Html Msg) -> Html Msg
-doblecolumna s a b =
-    div
-        [ style "padding"
-            (s
-                ++ "px 0px "
-                ++ (String.fromInt <| (\x -> 2 * x) <| Maybe.withDefault 0 <| String.toInt s)
-                ++ "px 0px"
-            )
-        ]
-        [ div [ style "float" "left", style "width" "50%" ]
-            [ div [ style "float" "right", style "width" "400px" ]
-                a
-            ]
-        , div [ style "float" "right", style "width" "50%" ]
-            [ div [ style "float" "left", style "width" "400px" ]
-                b
-            ]
-        ]
-
-
-header : Html Msg
-header =
-    h1
-        ( textStyle "2em" )
-        [ text "DIAGRAMAS DE RELOJ" ]
-
-
 opciones : Html Msg
 opciones =
+  let estiloLetra = textStyle "20px"
+  in
     doblecolumna "10"
         [ label
-            ( textStyle "20px" )
+            estiloLetra
             [ input
                 [ type_ "checkbox"
                 , checked False
@@ -53,7 +27,7 @@ opciones =
             ]
         ]
         [ label
-            ( textStyle "20px" )
+            estiloLetra
             [ input
                 [ type_ "checkbox"
                 , checked False
@@ -67,9 +41,11 @@ opciones =
 
 schoenberg : Html Msg
 schoenberg =
+  let estiloLetra = textStyle "20px"
+  in
     div [ style "margin-bottom" "-50px" ]
         [ label
-            ( textStyle "20px" )
+            estiloLetra
             [ input
                 [ type_ "radio"
                 , name "FunctionSet"
@@ -81,7 +57,7 @@ schoenberg =
             ]
         , br [] []
         , label
-            ( textStyle "20px" )
+            estiloLetra
             [ input
                 [ type_ "radio"
                 , name "FunctionSet"
@@ -93,84 +69,31 @@ schoenberg =
         ]
 
 
-botoncitos : Bool -> Html Msg
-botoncitos b =
+funcionicas : Bool -> Html Msg
+funcionicas b =
+  let estiloBoton accion =
+        ( buttonStyle "200px" ++ [ onClick accion ] )
+  in
     doblecolumna "75"
-        [ button ( buttonStyle "200px" ++ [ onClick Invertir ])
+        [ button ( estiloBoton Invertir )
             [ text
-                (if b then
-                    "Inversión"
-
-                 else
-                    "Simetría"
-                )
+                (if b then "Inversión"
+                 else "Simetría")
             ]
         , br [] []
         , br [] []
-        , button ( buttonStyle "200px" ++ [ onClick Transportar ])
+        , button ( estiloBoton Transportar )
             [ text "Transposición" ]
         ]
-        [ button ( buttonStyle "200px" ++ [ onClick Retrogradar ])
+        [ button ( estiloBoton Retrogradar )
             [ text
-                (if b then
-                    "Retrogradación"
-
-                 else
-                    "Volteo"
-                )
+                (if b then "Retrogradación"
+                  else "Volteo")
             ]
         , br [] []
         , br [] []
-        , button ( buttonStyle "200px" ++ [ onClick Ciclar ])
+        , button ( estiloBoton Ciclar )
             [ text "Desp. cíclico" ]
-        ]
-
-
-originalrow : List Int -> Html Msg
-originalrow r =
-    div [ style "overflow" "auto" ]
-        [ table
-            tableStyle
-            [ tr
-                [ style "box-shadow" "5px 8px" ]
-                (List.map
-                    ((\a -> (\dividend modulus -> modBy modulus dividend) a (List.length r))
-                        >> String.fromInt
-                        >> (\x -> td boldStyle [ text x ])
-                    )
-                    r
-                )
-            ]
-        ]
-
-
-entrada : Html Msg
-entrada =
-    input
-        ( fieldStyle
-        ++ [ style "margin-top" "50px"
-        , style "margin-bottom" "50px"
-        , placeholder "4 5 7 1 6 3 8 2 11 0 9 10"
-        , onInput Introducir
-        ])
-        []
-
-
-bloquealeatorio : Html Msg
-bloquealeatorio =
-    div
-        [ style "margin-top" "50px", style "margin-bottom" "50px" ]
-        [ span
-            (textStyle "20px")
-            [ text "Serie aleatoria de longitud " ]
-        , input
-            ( squarefieldStyle "20px"
-            ++ [ placeholder "12"
-            , onInput KeepLong
-            ])
-            []
-        , button ( littlebuttonStyle ++ [onClick Aleatorio ])
-            [ text "OK" ]
         ]
 
 view : Model -> Browser.Document Msg
@@ -178,16 +101,14 @@ view model =
   (Browser.Document "Diagramas"
     [ div  generalStyle
         [ navbar 2
-        , br [] []
-        , br [] []
-        , header
+        , titulo "DIAGRAMAS DE RELOJ"
         , opciones
         , diagramas model
         , schoenberg
-        , botoncitos model.sch
+        , funcionicas model.sch
+        , bloquealeatorio (onInput KeepLong) (onClick Aleatorio)
         , originalrow model.serie
-        , entrada
-        , bloquealeatorio
+        , entrada (onInput Introducir)
         , informacion
         ]
     ]

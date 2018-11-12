@@ -6003,6 +6003,109 @@ var author$project$Info$informacion = A2(
 						]))
 				]))
 		]));
+var author$project$Styles$weird = _List_fromArray(
+	[
+		A2(elm$html$Html$Attributes$style, 'padding', '3.5px 10px'),
+		A2(elm$html$Html$Attributes$style, 'appearance', 'none'),
+		A2(elm$html$Html$Attributes$style, '-moz-appearance', 'none'),
+		A2(elm$html$Html$Attributes$style, '-webkit-appearance', 'none'),
+		A2(elm$html$Html$Attributes$style, 'background-repeat', 'no-repeat'),
+		A2(elm$html$Html$Attributes$style, 'background-position', '95%'),
+		A2(elm$html$Html$Attributes$style, 'border', '1px solid #88888'),
+		A2(elm$html$Html$Attributes$style, 'border-radius', '20px 20px 20px 20px'),
+		A2(elm$html$Html$Attributes$style, 'color', 'black'),
+		A2(elm$html$Html$Attributes$style, 'overflow', 'hidden'),
+		A2(elm$html$Html$Attributes$style, '-moz-border-radius', '20px 20px 20px 20px'),
+		A2(elm$html$Html$Attributes$style, '-webkit-border-radius', '20px 20px 20px 20px')
+	]);
+var author$project$Styles$littlebuttonStyle = _Utils_ap(
+	_List_fromArray(
+		[
+			A2(elm$html$Html$Attributes$style, 'width', '50px')
+		]),
+	_Utils_ap(
+		author$project$Styles$weird,
+		author$project$Styles$textStyle('20px')));
+var author$project$Styles$squarefieldStyle = function (s) {
+	return _Utils_ap(
+		_List_fromArray(
+			[
+				A2(elm$html$Html$Attributes$style, 'width', s),
+				A2(elm$html$Html$Attributes$style, 'text-align', 'center'),
+				A2(elm$html$Html$Attributes$style, 'padding', '3.5px 2px')
+			]),
+		author$project$Styles$textStyle('20px'));
+};
+var elm$html$Html$button = _VirtualDom_node('button');
+var elm$html$Html$input = _VirtualDom_node('input');
+var elm$html$Html$span = _VirtualDom_node('span');
+var elm$json$Json$Encode$string = _Json_wrap;
+var elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			elm$json$Json$Encode$string(string));
+	});
+var elm$html$Html$Attributes$placeholder = elm$html$Html$Attributes$stringProperty('placeholder');
+var author$project$Styles$bloquealeatorio = F2(
+	function (longitud, aleatorio) {
+		return A2(
+			elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					elm$html$Html$span,
+					author$project$Styles$textStyle('20px'),
+					_List_fromArray(
+						[
+							elm$html$Html$text('Serie aleatoria de longitud ')
+						])),
+					A2(
+					elm$html$Html$input,
+					_Utils_ap(
+						author$project$Styles$squarefieldStyle('1em'),
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$placeholder('12'),
+								longitud
+							])),
+					_List_Nil),
+					A2(
+					elm$html$Html$button,
+					_Utils_ap(
+						author$project$Styles$littlebuttonStyle,
+						_List_fromArray(
+							[aleatorio])),
+					_List_fromArray(
+						[
+							elm$html$Html$text('OK')
+						]))
+				]));
+	});
+var author$project$Styles$fieldStyle = _Utils_ap(
+	_List_fromArray(
+		[
+			A2(elm$html$Html$Attributes$style, 'width', '650px'),
+			A2(elm$html$Html$Attributes$style, 'text-align', 'center'),
+			A2(elm$html$Html$Attributes$style, 'border-radius', '20px 20px 20px 20px')
+		]),
+	author$project$Styles$textStyle('30px'));
+var author$project$Styles$entrada = function (inp) {
+	return A2(
+		elm$html$Html$input,
+		_Utils_ap(
+			author$project$Styles$fieldStyle,
+			_List_fromArray(
+				[
+					A2(elm$html$Html$Attributes$style, 'margin-top', '50px'),
+					A2(elm$html$Html$Attributes$style, 'margin-bottom', '50px'),
+					elm$html$Html$Attributes$placeholder('4 5 7 1 6 3 8 2 11 0 9 10'),
+					inp
+				])),
+		_List_Nil);
+};
 var author$project$Styles$back = '#F9F9FF';
 var author$project$Styles$generalStyle = _List_fromArray(
 	[
@@ -6012,14 +6115,6 @@ var author$project$Styles$generalStyle = _List_fromArray(
 	]);
 var author$project$Styles$bold = '#BBBBFF';
 var author$project$Styles$suave = '#EEEEFF';
-var elm$json$Json$Encode$string = _Json_wrap;
-var elm$html$Html$Attributes$stringProperty = F2(
-	function (key, string) {
-		return A2(
-			_VirtualDom_property,
-			key,
-			elm$json$Json$Encode$string(string));
-	});
 var elm$html$Html$Attributes$href = function (url) {
 	return A2(
 		elm$html$Html$Attributes$stringProperty,
@@ -6046,7 +6141,7 @@ var author$project$Styles$aStyle = F2(
 					A2(elm$html$Html$Attributes$style, 'border-style', 'solid'),
 					A2(elm$html$Html$Attributes$style, 'border-color', author$project$Styles$back)
 				]),
-			author$project$Styles$textStyle('1em'));
+			author$project$Styles$textStyle('1.25em'));
 	});
 var elm$html$Html$a = _VirtualDom_node('a');
 var elm$html$Html$nav = _VirtualDom_node('nav');
@@ -6056,412 +6151,58 @@ var author$project$Styles$navbar = function (_this) {
 	var two = _n0.b;
 	var three = _n0.c;
 	return A2(
-		elm$html$Html$nav,
-		_List_fromArray(
-			[
-				A2(elm$html$Html$Attributes$style, 'position', 'fixed'),
-				A2(elm$html$Html$Attributes$style, 'top', '0'),
-				A2(elm$html$Html$Attributes$style, 'width', '100%'),
-				A2(elm$html$Html$Attributes$style, 'background-color', author$project$Styles$back)
-			]),
+		elm$html$Html$div,
+		_List_Nil,
 		_List_fromArray(
 			[
 				A2(
-				elm$html$Html$a,
-				A2(author$project$Styles$aStyle, one, 'https://matrices.netlify.com/'),
+				elm$html$Html$nav,
 				_List_fromArray(
 					[
-						elm$html$Html$text('Matrices')
-					])),
-				A2(
-				elm$html$Html$a,
-				A2(author$project$Styles$aStyle, two, 'https://diagramas.netlify.com/'),
-				_List_fromArray(
-					[
-						elm$html$Html$text('Diagramas')
-					])),
-				A2(
-				elm$html$Html$a,
-				A2(author$project$Styles$aStyle, three, 'https://modificaciones.netlify.com/'),
-				_List_fromArray(
-					[
-						elm$html$Html$text('Modificaciones')
-					])),
-				A2(
-				elm$html$Html$div,
-				_List_fromArray(
-					[
-						A2(elm$html$Html$Attributes$style, 'min-width', '15px'),
-						A2(elm$html$Html$Attributes$style, 'display', 'inline-block')
+						A2(elm$html$Html$Attributes$style, 'position', 'fixed'),
+						A2(elm$html$Html$Attributes$style, 'top', '0'),
+						A2(elm$html$Html$Attributes$style, 'width', '100%'),
+						A2(elm$html$Html$Attributes$style, 'background-color', author$project$Styles$back)
 					]),
 				_List_fromArray(
 					[
-						elm$html$Html$text(' ')
-					]))
+						A2(
+						elm$html$Html$a,
+						A2(author$project$Styles$aStyle, one, 'https://matrices.netlify.com/'),
+						_List_fromArray(
+							[
+								elm$html$Html$text('Matrices')
+							])),
+						A2(
+						elm$html$Html$a,
+						A2(author$project$Styles$aStyle, two, 'https://diagramas.netlify.com/'),
+						_List_fromArray(
+							[
+								elm$html$Html$text('Diagramas')
+							])),
+						A2(
+						elm$html$Html$a,
+						A2(author$project$Styles$aStyle, three, 'https://modificaciones.netlify.com/'),
+						_List_fromArray(
+							[
+								elm$html$Html$text('Modificaciones')
+							])),
+						A2(
+						elm$html$Html$div,
+						_List_fromArray(
+							[
+								A2(elm$html$Html$Attributes$style, 'min-width', '15px'),
+								A2(elm$html$Html$Attributes$style, 'display', 'inline-block')
+							]),
+						_List_fromArray(
+							[
+								elm$html$Html$text(' ')
+							]))
+					])),
+				A2(elm$html$Html$br, _List_Nil, _List_Nil),
+				A2(elm$html$Html$br, _List_Nil, _List_Nil)
 			]));
 };
-var author$project$Styles$littlebuttonStyle = _List_fromArray(
-	[
-		A2(elm$html$Html$Attributes$style, 'font-family', 'calibri'),
-		A2(elm$html$Html$Attributes$style, 'font-size', '20px'),
-		A2(elm$html$Html$Attributes$style, 'width', '50px'),
-		A2(elm$html$Html$Attributes$style, 'padding', '3.5px 10px'),
-		A2(elm$html$Html$Attributes$style, 'appearance', 'none'),
-		A2(elm$html$Html$Attributes$style, '-moz-appearance', 'none'),
-		A2(elm$html$Html$Attributes$style, '-webkit-appearance', 'none'),
-		A2(elm$html$Html$Attributes$style, 'background-repeat', 'no-repeat'),
-		A2(elm$html$Html$Attributes$style, 'background-position', '95%'),
-		A2(elm$html$Html$Attributes$style, 'border', '1px solid #88888'),
-		A2(elm$html$Html$Attributes$style, 'border-radius', '20px 20px 20px 20px'),
-		A2(elm$html$Html$Attributes$style, 'color', 'black'),
-		A2(elm$html$Html$Attributes$style, 'overflow', 'hidden'),
-		A2(elm$html$Html$Attributes$style, '-moz-border-radius', '20px 20px 20px 20px'),
-		A2(elm$html$Html$Attributes$style, '-webkit-border-radius', '20px 20px 20px 20px'),
-		A2(elm$html$Html$Attributes$style, 'font-family', 'calibri')
-	]);
-var author$project$Styles$squarefieldStyle = function (s) {
-	return _List_fromArray(
-		[
-			A2(elm$html$Html$Attributes$style, 'width', s),
-			A2(elm$html$Html$Attributes$style, 'text-align', 'center'),
-			A2(elm$html$Html$Attributes$style, 'font-family', 'calibri'),
-			A2(elm$html$Html$Attributes$style, 'font-size', '20px'),
-			A2(elm$html$Html$Attributes$style, 'padding', '3.5px 2px')
-		]);
-};
-var author$project$Types$Aleatorio = {$: 'Aleatorio'};
-var author$project$Types$KeepLong = function (a) {
-	return {$: 'KeepLong', a: a};
-};
-var elm$html$Html$button = _VirtualDom_node('button');
-var elm$html$Html$input = _VirtualDom_node('input');
-var elm$html$Html$span = _VirtualDom_node('span');
-var elm$html$Html$Attributes$placeholder = elm$html$Html$Attributes$stringProperty('placeholder');
-var elm$virtual_dom$VirtualDom$Normal = function (a) {
-	return {$: 'Normal', a: a};
-};
-var elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
-var elm$html$Html$Events$on = F2(
-	function (event, decoder) {
-		return A2(
-			elm$virtual_dom$VirtualDom$on,
-			event,
-			elm$virtual_dom$VirtualDom$Normal(decoder));
-	});
-var elm$html$Html$Events$onClick = function (msg) {
-	return A2(
-		elm$html$Html$Events$on,
-		'click',
-		elm$json$Json$Decode$succeed(msg));
-};
-var elm$html$Html$Events$alwaysStop = function (x) {
-	return _Utils_Tuple2(x, true);
-};
-var elm$virtual_dom$VirtualDom$MayStopPropagation = function (a) {
-	return {$: 'MayStopPropagation', a: a};
-};
-var elm$html$Html$Events$stopPropagationOn = F2(
-	function (event, decoder) {
-		return A2(
-			elm$virtual_dom$VirtualDom$on,
-			event,
-			elm$virtual_dom$VirtualDom$MayStopPropagation(decoder));
-	});
-var elm$json$Json$Decode$field = _Json_decodeField;
-var elm$json$Json$Decode$at = F2(
-	function (fields, decoder) {
-		return A3(elm$core$List$foldr, elm$json$Json$Decode$field, decoder, fields);
-	});
-var elm$json$Json$Decode$string = _Json_decodeString;
-var elm$html$Html$Events$targetValue = A2(
-	elm$json$Json$Decode$at,
-	_List_fromArray(
-		['target', 'value']),
-	elm$json$Json$Decode$string);
-var elm$html$Html$Events$onInput = function (tagger) {
-	return A2(
-		elm$html$Html$Events$stopPropagationOn,
-		'input',
-		A2(
-			elm$json$Json$Decode$map,
-			elm$html$Html$Events$alwaysStop,
-			A2(elm$json$Json$Decode$map, tagger, elm$html$Html$Events$targetValue)));
-};
-var author$project$View$bloquealeatorio = A2(
-	elm$html$Html$div,
-	_List_fromArray(
-		[
-			A2(elm$html$Html$Attributes$style, 'margin-top', '50px'),
-			A2(elm$html$Html$Attributes$style, 'margin-bottom', '50px')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			elm$html$Html$span,
-			author$project$Styles$textStyle('20px'),
-			_List_fromArray(
-				[
-					elm$html$Html$text('Serie aleatoria de longitud ')
-				])),
-			A2(
-			elm$html$Html$input,
-			_Utils_ap(
-				author$project$Styles$squarefieldStyle('20px'),
-				_List_fromArray(
-					[
-						elm$html$Html$Attributes$placeholder('12'),
-						elm$html$Html$Events$onInput(author$project$Types$KeepLong)
-					])),
-			_List_Nil),
-			A2(
-			elm$html$Html$button,
-			_Utils_ap(
-				author$project$Styles$littlebuttonStyle,
-				_List_fromArray(
-					[
-						elm$html$Html$Events$onClick(author$project$Types$Aleatorio)
-					])),
-			_List_fromArray(
-				[
-					elm$html$Html$text('OK')
-				]))
-		]));
-var author$project$Styles$buttonStyle = function (s) {
-	return _List_fromArray(
-		[
-			A2(elm$html$Html$Attributes$style, 'font-family', 'calibri'),
-			A2(elm$html$Html$Attributes$style, 'font-size', '20px'),
-			A2(elm$html$Html$Attributes$style, 'width', s)
-		]);
-};
-var author$project$Types$Ciclar = {$: 'Ciclar'};
-var author$project$Types$Invertir = {$: 'Invertir'};
-var author$project$Types$Retrogradar = {$: 'Retrogradar'};
-var author$project$Types$Transportar = {$: 'Transportar'};
-var author$project$View$doblecolumna = F3(
-	function (s, a, b) {
-		return A2(
-			elm$html$Html$div,
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$Attributes$style,
-					'padding',
-					s + ('px 0px ' + (elm$core$String$fromInt(
-						function (x) {
-							return 2 * x;
-						}(
-							A2(
-								elm$core$Maybe$withDefault,
-								0,
-								elm$core$String$toInt(s)))) + 'px 0px')))
-				]),
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$div,
-					_List_fromArray(
-						[
-							A2(elm$html$Html$Attributes$style, 'float', 'left'),
-							A2(elm$html$Html$Attributes$style, 'width', '50%')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							elm$html$Html$div,
-							_List_fromArray(
-								[
-									A2(elm$html$Html$Attributes$style, 'float', 'right'),
-									A2(elm$html$Html$Attributes$style, 'width', '400px')
-								]),
-							a)
-						])),
-					A2(
-					elm$html$Html$div,
-					_List_fromArray(
-						[
-							A2(elm$html$Html$Attributes$style, 'float', 'right'),
-							A2(elm$html$Html$Attributes$style, 'width', '50%')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							elm$html$Html$div,
-							_List_fromArray(
-								[
-									A2(elm$html$Html$Attributes$style, 'float', 'left'),
-									A2(elm$html$Html$Attributes$style, 'width', '400px')
-								]),
-							b)
-						]))
-				]));
-	});
-var author$project$View$botoncitos = function (b) {
-	return A3(
-		author$project$View$doblecolumna,
-		'75',
-		_List_fromArray(
-			[
-				A2(
-				elm$html$Html$button,
-				_Utils_ap(
-					author$project$Styles$buttonStyle('200px'),
-					_List_fromArray(
-						[
-							elm$html$Html$Events$onClick(author$project$Types$Invertir)
-						])),
-				_List_fromArray(
-					[
-						elm$html$Html$text(
-						b ? 'Inversión' : 'Simetría')
-					])),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(
-				elm$html$Html$button,
-				_Utils_ap(
-					author$project$Styles$buttonStyle('200px'),
-					_List_fromArray(
-						[
-							elm$html$Html$Events$onClick(author$project$Types$Transportar)
-						])),
-				_List_fromArray(
-					[
-						elm$html$Html$text('Transposición')
-					]))
-			]),
-		_List_fromArray(
-			[
-				A2(
-				elm$html$Html$button,
-				_Utils_ap(
-					author$project$Styles$buttonStyle('200px'),
-					_List_fromArray(
-						[
-							elm$html$Html$Events$onClick(author$project$Types$Retrogradar)
-						])),
-				_List_fromArray(
-					[
-						elm$html$Html$text(
-						b ? 'Retrogradación' : 'Volteo')
-					])),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(
-				elm$html$Html$button,
-				_Utils_ap(
-					author$project$Styles$buttonStyle('200px'),
-					_List_fromArray(
-						[
-							elm$html$Html$Events$onClick(author$project$Types$Ciclar)
-						])),
-				_List_fromArray(
-					[
-						elm$html$Html$text('Desp. cíclico')
-					]))
-			]));
-};
-var author$project$Styles$fieldStyle = _List_fromArray(
-	[
-		A2(elm$html$Html$Attributes$style, 'width', '650px'),
-		A2(elm$html$Html$Attributes$style, 'text-align', 'center'),
-		A2(elm$html$Html$Attributes$style, 'font-family', 'calibri'),
-		A2(elm$html$Html$Attributes$style, 'font-size', '30px'),
-		A2(elm$html$Html$Attributes$style, 'border-radius', '20px 20px 20px 20px')
-	]);
-var author$project$Types$Introducir = function (a) {
-	return {$: 'Introducir', a: a};
-};
-var author$project$View$entrada = A2(
-	elm$html$Html$input,
-	_Utils_ap(
-		author$project$Styles$fieldStyle,
-		_List_fromArray(
-			[
-				A2(elm$html$Html$Attributes$style, 'margin-top', '50px'),
-				A2(elm$html$Html$Attributes$style, 'margin-bottom', '50px'),
-				elm$html$Html$Attributes$placeholder('4 5 7 1 6 3 8 2 11 0 9 10'),
-				elm$html$Html$Events$onInput(author$project$Types$Introducir)
-			])),
-	_List_Nil);
-var elm$html$Html$h1 = _VirtualDom_node('h1');
-var author$project$View$header = A2(
-	elm$html$Html$h1,
-	author$project$Styles$textStyle('2em'),
-	_List_fromArray(
-		[
-			elm$html$Html$text('DIAGRAMAS DE RELOJ')
-		]));
-var author$project$Types$Rotar = function (a) {
-	return {$: 'Rotar', a: a};
-};
-var author$project$Types$Ultimo = function (a) {
-	return {$: 'Ultimo', a: a};
-};
-var elm$html$Html$label = _VirtualDom_node('label');
-var elm$json$Json$Encode$bool = _Json_wrap;
-var elm$html$Html$Attributes$boolProperty = F2(
-	function (key, bool) {
-		return A2(
-			_VirtualDom_property,
-			key,
-			elm$json$Json$Encode$bool(bool));
-	});
-var elm$html$Html$Attributes$checked = elm$html$Html$Attributes$boolProperty('checked');
-var elm$html$Html$Attributes$type_ = elm$html$Html$Attributes$stringProperty('type');
-var elm$json$Json$Decode$bool = _Json_decodeBool;
-var elm$html$Html$Events$targetChecked = A2(
-	elm$json$Json$Decode$at,
-	_List_fromArray(
-		['target', 'checked']),
-	elm$json$Json$Decode$bool);
-var elm$html$Html$Events$onCheck = function (tagger) {
-	return A2(
-		elm$html$Html$Events$on,
-		'change',
-		A2(elm$json$Json$Decode$map, tagger, elm$html$Html$Events$targetChecked));
-};
-var author$project$View$opciones = A3(
-	author$project$View$doblecolumna,
-	'10',
-	_List_fromArray(
-		[
-			A2(
-			elm$html$Html$label,
-			author$project$Styles$textStyle('20px'),
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$input,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$type_('checkbox'),
-							elm$html$Html$Attributes$checked(false),
-							elm$html$Html$Events$onCheck(author$project$Types$Rotar)
-						]),
-					_List_Nil),
-					elm$html$Html$text(' Flecha de comienzo arriba')
-				]))
-		]),
-	_List_fromArray(
-		[
-			A2(
-			elm$html$Html$label,
-			author$project$Styles$textStyle('20px'),
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$input,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$type_('checkbox'),
-							elm$html$Html$Attributes$checked(false),
-							elm$html$Html$Events$onCheck(author$project$Types$Ultimo)
-						]),
-					_List_Nil),
-					elm$html$Html$text(' Cerrar línea final')
-				]))
-		]));
 var author$project$Styles$boldStyle = _List_fromArray(
 	[
 		A2(elm$html$Html$Attributes$style, 'text-align', 'center'),
@@ -6474,18 +6215,22 @@ var author$project$Styles$boldStyle = _List_fromArray(
 		A2(elm$html$Html$Attributes$style, 'background-color', author$project$Styles$bold),
 		A2(elm$html$Html$Attributes$style, 'box-shadow', '5px 7.5px')
 	]);
-var author$project$Styles$tableStyle = _List_fromArray(
+var author$project$Styles$centered = _List_fromArray(
 	[
-		A2(elm$html$Html$Attributes$style, 'text-align', 'center'),
-		A2(elm$html$Html$Attributes$style, 'border-collapse', 'collapse'),
-		A2(elm$html$Html$Attributes$style, 'table-layout', 'fixed'),
 		A2(elm$html$Html$Attributes$style, 'margin-left', 'auto'),
-		A2(elm$html$Html$Attributes$style, 'margin-right', 'auto'),
-		A2(elm$html$Html$Attributes$style, 'margin-top', '50px'),
-		A2(elm$html$Html$Attributes$style, 'margin-bottom', '20px')
+		A2(elm$html$Html$Attributes$style, 'margin-right', 'auto')
 	]);
+var author$project$Styles$tableStyle = _Utils_ap(
+	_List_fromArray(
+		[
+			A2(elm$html$Html$Attributes$style, 'text-align', 'center'),
+			A2(elm$html$Html$Attributes$style, 'border-collapse', 'collapse'),
+			A2(elm$html$Html$Attributes$style, 'table-layout', 'fixed'),
+			A2(elm$html$Html$Attributes$style, 'margin', '20px 0px')
+		]),
+	author$project$Styles$centered);
 var elm$html$Html$tr = _VirtualDom_node('tr');
-var author$project$View$originalrow = function (r) {
+var author$project$Styles$originalrow = function (r) {
 	return A2(
 		elm$html$Html$div,
 		_List_fromArray(
@@ -6511,12 +6256,9 @@ var author$project$View$originalrow = function (r) {
 								elm$core$Basics$composeR,
 								function (a) {
 									return A2(
-										F2(
-											function (dividend, modulus) {
-												return A2(elm$core$Basics$modBy, modulus, dividend);
-											}),
-										a,
-										elm$core$List$length(r));
+										elm$core$Basics$modBy,
+										elm$core$List$length(r),
+										a);
 								},
 								A2(
 									elm$core$Basics$composeR,
@@ -6534,59 +6276,323 @@ var author$project$View$originalrow = function (r) {
 					]))
 			]));
 };
+var elm$html$Html$h1 = _VirtualDom_node('h1');
+var author$project$Styles$titulo = function (s) {
+	return A2(
+		elm$html$Html$h1,
+		author$project$Styles$textStyle('2em'),
+		_List_fromArray(
+			[
+				elm$html$Html$text(s)
+			]));
+};
+var author$project$Types$Aleatorio = {$: 'Aleatorio'};
+var author$project$Types$Introducir = function (a) {
+	return {$: 'Introducir', a: a};
+};
+var author$project$Types$KeepLong = function (a) {
+	return {$: 'KeepLong', a: a};
+};
+var author$project$Styles$buttonStyle = function (s) {
+	return _Utils_ap(
+		_List_fromArray(
+			[
+				A2(elm$html$Html$Attributes$style, 'width', s)
+			]),
+		author$project$Styles$textStyle('20px'));
+};
+var author$project$Styles$doblecolumna = F3(
+	function (s, a, b) {
+		var tamancho = '400px';
+		return A2(
+			elm$html$Html$div,
+			_List_fromArray(
+				[
+					A2(
+					elm$html$Html$Attributes$style,
+					'padding',
+					s + ('px 0px ' + (elm$core$String$fromInt(
+						2 * A2(
+							elm$core$Maybe$withDefault,
+							0,
+							elm$core$String$toInt(s))) + 'px 0px')))
+				]),
+			_List_fromArray(
+				[
+					A2(
+					elm$html$Html$div,
+					_List_fromArray(
+						[
+							A2(elm$html$Html$Attributes$style, 'float', 'left'),
+							A2(elm$html$Html$Attributes$style, 'width', '50%')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2(elm$html$Html$Attributes$style, 'float', 'right'),
+									A2(elm$html$Html$Attributes$style, 'width', tamancho)
+								]),
+							a)
+						])),
+					A2(
+					elm$html$Html$div,
+					_List_fromArray(
+						[
+							A2(elm$html$Html$Attributes$style, 'float', 'right'),
+							A2(elm$html$Html$Attributes$style, 'width', '50%')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2(elm$html$Html$Attributes$style, 'float', 'left'),
+									A2(elm$html$Html$Attributes$style, 'width', tamancho)
+								]),
+							b)
+						]))
+				]));
+	});
+var author$project$Types$Ciclar = {$: 'Ciclar'};
+var author$project$Types$Invertir = {$: 'Invertir'};
+var author$project$Types$Retrogradar = {$: 'Retrogradar'};
+var author$project$Types$Transportar = {$: 'Transportar'};
+var elm$virtual_dom$VirtualDom$Normal = function (a) {
+	return {$: 'Normal', a: a};
+};
+var elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
+var elm$html$Html$Events$on = F2(
+	function (event, decoder) {
+		return A2(
+			elm$virtual_dom$VirtualDom$on,
+			event,
+			elm$virtual_dom$VirtualDom$Normal(decoder));
+	});
+var elm$html$Html$Events$onClick = function (msg) {
+	return A2(
+		elm$html$Html$Events$on,
+		'click',
+		elm$json$Json$Decode$succeed(msg));
+};
+var author$project$View$funcionicas = function (b) {
+	var estiloBoton = function (accion) {
+		return _Utils_ap(
+			author$project$Styles$buttonStyle('200px'),
+			_List_fromArray(
+				[
+					elm$html$Html$Events$onClick(accion)
+				]));
+	};
+	return A3(
+		author$project$Styles$doblecolumna,
+		'75',
+		_List_fromArray(
+			[
+				A2(
+				elm$html$Html$button,
+				estiloBoton(author$project$Types$Invertir),
+				_List_fromArray(
+					[
+						elm$html$Html$text(
+						b ? 'Inversión' : 'Simetría')
+					])),
+				A2(elm$html$Html$br, _List_Nil, _List_Nil),
+				A2(elm$html$Html$br, _List_Nil, _List_Nil),
+				A2(
+				elm$html$Html$button,
+				estiloBoton(author$project$Types$Transportar),
+				_List_fromArray(
+					[
+						elm$html$Html$text('Transposición')
+					]))
+			]),
+		_List_fromArray(
+			[
+				A2(
+				elm$html$Html$button,
+				estiloBoton(author$project$Types$Retrogradar),
+				_List_fromArray(
+					[
+						elm$html$Html$text(
+						b ? 'Retrogradación' : 'Volteo')
+					])),
+				A2(elm$html$Html$br, _List_Nil, _List_Nil),
+				A2(elm$html$Html$br, _List_Nil, _List_Nil),
+				A2(
+				elm$html$Html$button,
+				estiloBoton(author$project$Types$Ciclar),
+				_List_fromArray(
+					[
+						elm$html$Html$text('Desp. cíclico')
+					]))
+			]));
+};
+var author$project$Types$Rotar = function (a) {
+	return {$: 'Rotar', a: a};
+};
+var author$project$Types$Ultimo = function (a) {
+	return {$: 'Ultimo', a: a};
+};
+var elm$html$Html$label = _VirtualDom_node('label');
+var elm$json$Json$Encode$bool = _Json_wrap;
+var elm$html$Html$Attributes$boolProperty = F2(
+	function (key, bool) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			elm$json$Json$Encode$bool(bool));
+	});
+var elm$html$Html$Attributes$checked = elm$html$Html$Attributes$boolProperty('checked');
+var elm$html$Html$Attributes$type_ = elm$html$Html$Attributes$stringProperty('type');
+var elm$json$Json$Decode$field = _Json_decodeField;
+var elm$json$Json$Decode$at = F2(
+	function (fields, decoder) {
+		return A3(elm$core$List$foldr, elm$json$Json$Decode$field, decoder, fields);
+	});
+var elm$json$Json$Decode$bool = _Json_decodeBool;
+var elm$html$Html$Events$targetChecked = A2(
+	elm$json$Json$Decode$at,
+	_List_fromArray(
+		['target', 'checked']),
+	elm$json$Json$Decode$bool);
+var elm$html$Html$Events$onCheck = function (tagger) {
+	return A2(
+		elm$html$Html$Events$on,
+		'change',
+		A2(elm$json$Json$Decode$map, tagger, elm$html$Html$Events$targetChecked));
+};
+var author$project$View$opciones = function () {
+	var estiloLetra = author$project$Styles$textStyle('20px');
+	return A3(
+		author$project$Styles$doblecolumna,
+		'10',
+		_List_fromArray(
+			[
+				A2(
+				elm$html$Html$label,
+				estiloLetra,
+				_List_fromArray(
+					[
+						A2(
+						elm$html$Html$input,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$type_('checkbox'),
+								elm$html$Html$Attributes$checked(false),
+								elm$html$Html$Events$onCheck(author$project$Types$Rotar)
+							]),
+						_List_Nil),
+						elm$html$Html$text(' Flecha de comienzo arriba')
+					]))
+			]),
+		_List_fromArray(
+			[
+				A2(
+				elm$html$Html$label,
+				estiloLetra,
+				_List_fromArray(
+					[
+						A2(
+						elm$html$Html$input,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$type_('checkbox'),
+								elm$html$Html$Attributes$checked(false),
+								elm$html$Html$Events$onCheck(author$project$Types$Ultimo)
+							]),
+						_List_Nil),
+						elm$html$Html$text(' Cerrar línea final')
+					]))
+			]));
+}();
 var author$project$Types$Sch = function (a) {
 	return {$: 'Sch', a: a};
 };
 var elm$html$Html$Attributes$name = elm$html$Html$Attributes$stringProperty('name');
-var author$project$View$schoenberg = A2(
-	elm$html$Html$div,
-	_List_fromArray(
-		[
-			A2(elm$html$Html$Attributes$style, 'margin-bottom', '-50px')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			elm$html$Html$label,
-			author$project$Styles$textStyle('20px'),
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$input,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$type_('radio'),
-							elm$html$Html$Attributes$name('FunctionSet'),
-							elm$html$Html$Attributes$checked(true),
-							elm$html$Html$Events$onClick(
-							author$project$Types$Sch(true))
-						]),
-					_List_Nil),
-					elm$html$Html$text(' I, T, R, C')
-				])),
-			A2(elm$html$Html$br, _List_Nil, _List_Nil),
-			A2(
-			elm$html$Html$label,
-			author$project$Styles$textStyle('20px'),
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$input,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$type_('radio'),
-							elm$html$Html$Attributes$name('FunctionSet'),
-							elm$html$Html$Events$onClick(
-							author$project$Types$Sch(false))
-						]),
-					_List_Nil),
-					elm$html$Html$text(' S, T, V, C')
-				]))
-		]));
+var author$project$View$schoenberg = function () {
+	var estiloLetra = author$project$Styles$textStyle('20px');
+	return A2(
+		elm$html$Html$div,
+		_List_fromArray(
+			[
+				A2(elm$html$Html$Attributes$style, 'margin-bottom', '-50px')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				elm$html$Html$label,
+				estiloLetra,
+				_List_fromArray(
+					[
+						A2(
+						elm$html$Html$input,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$type_('radio'),
+								elm$html$Html$Attributes$name('FunctionSet'),
+								elm$html$Html$Attributes$checked(true),
+								elm$html$Html$Events$onClick(
+								author$project$Types$Sch(true))
+							]),
+						_List_Nil),
+						elm$html$Html$text(' I, T, R, C')
+					])),
+				A2(elm$html$Html$br, _List_Nil, _List_Nil),
+				A2(
+				elm$html$Html$label,
+				estiloLetra,
+				_List_fromArray(
+					[
+						A2(
+						elm$html$Html$input,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$type_('radio'),
+								elm$html$Html$Attributes$name('FunctionSet'),
+								elm$html$Html$Events$onClick(
+								author$project$Types$Sch(false))
+							]),
+						_List_Nil),
+						elm$html$Html$text(' S, T, V, C')
+					]))
+			]));
+}();
 var elm$browser$Browser$Document = F2(
 	function (title, body) {
 		return {body: body, title: title};
 	});
+var elm$html$Html$Events$alwaysStop = function (x) {
+	return _Utils_Tuple2(x, true);
+};
+var elm$virtual_dom$VirtualDom$MayStopPropagation = function (a) {
+	return {$: 'MayStopPropagation', a: a};
+};
+var elm$html$Html$Events$stopPropagationOn = F2(
+	function (event, decoder) {
+		return A2(
+			elm$virtual_dom$VirtualDom$on,
+			event,
+			elm$virtual_dom$VirtualDom$MayStopPropagation(decoder));
+	});
+var elm$json$Json$Decode$string = _Json_decodeString;
+var elm$html$Html$Events$targetValue = A2(
+	elm$json$Json$Decode$at,
+	_List_fromArray(
+		['target', 'value']),
+	elm$json$Json$Decode$string);
+var elm$html$Html$Events$onInput = function (tagger) {
+	return A2(
+		elm$html$Html$Events$stopPropagationOn,
+		'input',
+		A2(
+			elm$json$Json$Decode$map,
+			elm$html$Html$Events$alwaysStop,
+			A2(elm$json$Json$Decode$map, tagger, elm$html$Html$Events$targetValue)));
+};
 var author$project$View$view = function (model) {
 	return A2(
 		elm$browser$Browser$Document,
@@ -6599,16 +6605,18 @@ var author$project$View$view = function (model) {
 				_List_fromArray(
 					[
 						author$project$Styles$navbar(2),
-						A2(elm$html$Html$br, _List_Nil, _List_Nil),
-						A2(elm$html$Html$br, _List_Nil, _List_Nil),
-						author$project$View$header,
+						author$project$Styles$titulo('DIAGRAMAS DE RELOJ'),
 						author$project$View$opciones,
 						author$project$Functions$diagramas(model),
 						author$project$View$schoenberg,
-						author$project$View$botoncitos(model.sch),
-						author$project$View$originalrow(model.serie),
-						author$project$View$entrada,
-						author$project$View$bloquealeatorio,
+						author$project$View$funcionicas(model.sch),
+						A2(
+						author$project$Styles$bloquealeatorio,
+						elm$html$Html$Events$onInput(author$project$Types$KeepLong),
+						elm$html$Html$Events$onClick(author$project$Types$Aleatorio)),
+						author$project$Styles$originalrow(model.serie),
+						author$project$Styles$entrada(
+						elm$html$Html$Events$onInput(author$project$Types$Introducir)),
 						author$project$Info$informacion
 					]))
 			]));
