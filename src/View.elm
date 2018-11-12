@@ -107,6 +107,7 @@ view model =
         , schoenberg
         , funcionicas model.sch
         , bloquealeatorio (onInput KeepLong) (onClick Aleatorio)
+        , br [] []
         , originalrow model.serie
         , entrada (onInput Introducir)
         , informacion
