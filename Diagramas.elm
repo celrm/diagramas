@@ -12,10 +12,3 @@ main =
         , subscriptions = subscriptions
         , view = view
         }
-
-
-
-{-
-   -círculos centrados? separación entre ellos?
-   -flecha
--}
