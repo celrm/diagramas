@@ -5648,6 +5648,93 @@ var author$project$State$update = F2(
 					elm$core$Platform$Cmd$none);
 		}
 	});
+var author$project$Styles$back = '#F9F9FF';
+var elm$json$Json$Decode$map = _Json_map1;
+var elm$json$Json$Decode$map2 = _Json_map2;
+var elm$json$Json$Decode$succeed = _Json_succeed;
+var elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
+	switch (handler.$) {
+		case 'Normal':
+			return 0;
+		case 'MayStopPropagation':
+			return 1;
+		case 'MayPreventDefault':
+			return 2;
+		default:
+			return 3;
+	}
+};
+var elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var elm$html$Html$Attributes$style = elm$virtual_dom$VirtualDom$style;
+var author$project$Styles$textStyle = function (tam) {
+	return _List_fromArray(
+		[
+			A2(elm$html$Html$Attributes$style, 'font-family', 'calibri'),
+			A2(elm$html$Html$Attributes$style, 'font-size', tam)
+		]);
+};
+var elm$html$Html$a = _VirtualDom_node('a');
+var elm$html$Html$div = _VirtualDom_node('div');
+var elm$html$Html$span = _VirtualDom_node('span');
+var elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
+var elm$html$Html$text = elm$virtual_dom$VirtualDom$text;
+var elm$json$Json$Encode$string = _Json_wrap;
+var elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			elm$json$Json$Encode$string(string));
+	});
+var elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
+var author$project$Credits$credits = A2(
+	elm$html$Html$div,
+	_Utils_ap(
+		_List_fromArray(
+			[
+				A2(elm$html$Html$Attributes$style, 'margin-top', '100px'),
+				A2(elm$html$Html$Attributes$style, 'right', '0px'),
+				A2(elm$html$Html$Attributes$style, 'bottom', '0px'),
+				A2(elm$html$Html$Attributes$style, 'position', 'fixed'),
+				A2(elm$html$Html$Attributes$style, 'background-color', author$project$Styles$back)
+			]),
+		author$project$Styles$textStyle('0.75em')),
+	_List_fromArray(
+		[
+			A2(
+			elm$html$Html$span,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('Celia Rubio Madrigal')
+				])),
+			A2(
+			elm$html$Html$span,
+			_List_fromArray(
+				[
+					A2(elm$html$Html$Attributes$style, 'margin-left', '50px')
+				]),
+			_List_fromArray(
+				[
+					elm$html$Html$text('Email: ')
+				])),
+			A2(
+			elm$html$Html$a,
+			_List_fromArray(
+				[
+					elm$html$Html$Attributes$href('mailto:celrubio@ucm.es'),
+					A2(elm$html$Html$Attributes$style, 'margin-right', '20px')
+				]),
+			_List_fromArray(
+				[
+					elm$html$Html$text('celrubio@ucm.es')
+				]))
+		]));
 var elm$core$Basics$cos = _Basics_cos;
 var elm$core$Basics$sin = _Basics_sin;
 var elm$core$Basics$fromPolar = function (_n0) {
@@ -5687,28 +5774,12 @@ var elm$core$Tuple$second = function (_n0) {
 	var y = _n0.b;
 	return y;
 };
-var elm$json$Json$Decode$map = _Json_map1;
-var elm$json$Json$Decode$map2 = _Json_map2;
-var elm$json$Json$Decode$succeed = _Json_succeed;
-var elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
-	switch (handler.$) {
-		case 'Normal':
-			return 0;
-		case 'MayStopPropagation':
-			return 1;
-		case 'MayPreventDefault':
-			return 2;
-		default:
-			return 3;
-	}
-};
 var elm$svg$Svg$trustedNode = _VirtualDom_nodeNS('http://www.w3.org/2000/svg');
 var elm$svg$Svg$defs = elm$svg$Svg$trustedNode('defs');
 var elm$svg$Svg$marker = elm$svg$Svg$trustedNode('marker');
 var elm$svg$Svg$path = elm$svg$Svg$trustedNode('path');
 var elm$svg$Svg$polyline = elm$svg$Svg$trustedNode('polyline');
 var elm$svg$Svg$svg = elm$svg$Svg$trustedNode('svg');
-var elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var elm$svg$Svg$text = elm$virtual_dom$VirtualDom$text;
 var elm$svg$Svg$text_ = elm$svg$Svg$trustedNode('text');
 var elm$svg$Svg$Attributes$d = _VirtualDom_attribute('d');
@@ -5874,21 +5945,10 @@ var author$project$Functions$diagramas = function (model) {
 				])));
 };
 var author$project$Info$texto = '\n\n  # Más información:\n\n  ## ¿Qué es un _diagrama de reloj_?\n\n  Un diagrama de reloj es una representación visual de una serie musical. Se colocan los números del 0 al 11, o al `n-1` si la longitud de la serie es `n`, formando una circunferencia; como los números de un reloj. Después, se traza una línea empezando por la primera nota de la serie y pasando por cada nota en orden.\n\n  ## ¿Para qué sirve?\n\n  Un diagrama de reloj muestra con efectividad las características y la estructura interna que tiene la serie que representa. Se aprecia si tiene intervalos de tritono, porque son diagonales; si tiene notas consecutivas, o si tiene simetrías de algún tipo. Esta última propiedad es la más importante: singulariza a la serie y la hace más versátil a la hora de componer con ella y con sus derivadas. Los compositores serialistas siempre han dado un trato especial a las series simétricas, y ésta es una manera de visualizarlo.\n\n  ## ¿Cómo se introduce la serie?\n\n  La serie se introduce a través del cuadro de texto blanco. Acepta series numéricas de longitudes arbitrarias entre 1 y 100, con los números separados entre espacios. También se puede generar una permutación aleatoria de la longitud especificada en el recuadro pequeño, entre 1 y 100, tras pulsar el botón de OK.\n\n  ## ¿Hay opciones de personalización?\n\n  La casilla superior izquierda permite elegir entre tener arriba el `0` o la primera nota de la serie. La casilla superior derecha permite decidir si cerrar el diagrama; es decir, si unir la primera y la última nota.\n\n  ## ¿Para qué sirven los botones?\n\n  Los botones sirven para aplicar las funciones transformativas a la serie, y ver así cómo se comporta ante ellas. Además, es una forma sencilla y visual de encontrar las simetrías de la serie.\n\n  Como hay dos conjuntos de transformaciones definidos, hay una opción para elegir entre ellos. Las diferencias están tan solo en el intercambio de la inversión y la simetría, y de la retrogradación y el volteo. Aquí están las fórmulas matemáticas de cada conjunto de funciones, aplicadas a una permutación σ(m):\n\n';
-var elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
-var elm$html$Html$Attributes$style = elm$virtual_dom$VirtualDom$style;
-var author$project$Styles$textStyle = function (tam) {
-	return _List_fromArray(
-		[
-			A2(elm$html$Html$Attributes$style, 'font-family', 'calibri'),
-			A2(elm$html$Html$Attributes$style, 'font-size', tam)
-		]);
-};
 var elm$html$Html$br = _VirtualDom_node('br');
-var elm$html$Html$div = _VirtualDom_node('div');
 var elm$html$Html$sup = _VirtualDom_node('sup');
 var elm$html$Html$table = _VirtualDom_node('table');
 var elm$html$Html$td = _VirtualDom_node('td');
-var elm$html$Html$text = elm$virtual_dom$VirtualDom$text;
 var elm_explorations$markdown$Markdown$defaultOptions = {
 	defaultHighlighting: elm$core$Maybe$Nothing,
 	githubFlavored: elm$core$Maybe$Just(
@@ -6038,15 +6098,6 @@ var author$project$Styles$squarefieldStyle = function (s) {
 };
 var elm$html$Html$button = _VirtualDom_node('button');
 var elm$html$Html$input = _VirtualDom_node('input');
-var elm$html$Html$span = _VirtualDom_node('span');
-var elm$json$Json$Encode$string = _Json_wrap;
-var elm$html$Html$Attributes$stringProperty = F2(
-	function (key, string) {
-		return A2(
-			_VirtualDom_property,
-			key,
-			elm$json$Json$Encode$string(string));
-	});
 var elm$html$Html$Attributes$placeholder = elm$html$Html$Attributes$stringProperty('placeholder');
 var author$project$Styles$bloquealeatorio = F2(
 	function (longitud, aleatorio) {
@@ -6108,7 +6159,6 @@ var author$project$Styles$entrada = function (inp) {
 				])),
 		_List_Nil);
 };
-var author$project$Styles$back = '#F9F9FF';
 var author$project$Styles$generalStyle = _List_fromArray(
 	[
 		A2(elm$html$Html$Attributes$style, 'text-align', 'center'),
@@ -6117,12 +6167,6 @@ var author$project$Styles$generalStyle = _List_fromArray(
 	]);
 var author$project$Styles$bold = '#BBBBFF';
 var author$project$Styles$suave = '#EEEEFF';
-var elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
 var author$project$Styles$aStyle = F2(
 	function (_this, ref) {
 		return _Utils_ap(
@@ -6145,7 +6189,6 @@ var author$project$Styles$aStyle = F2(
 				]),
 			author$project$Styles$textStyle('1.25em'));
 	});
-var elm$html$Html$a = _VirtualDom_node('a');
 var elm$html$Html$nav = _VirtualDom_node('nav');
 var author$project$Styles$navbar = function (_this) {
 	return A2(
@@ -6616,7 +6659,9 @@ var author$project$View$view = function (model) {
 						author$project$Styles$originalrow(model.serie),
 						author$project$Styles$entrada(
 						elm$html$Html$Events$onInput(author$project$Types$Introducir)),
-						author$project$Info$informacion
+						author$project$Info$informacion,
+						A2(elm$html$Html$br, _List_Nil, _List_Nil),
+						author$project$Credits$credits
 					]))
 			]));
 };
